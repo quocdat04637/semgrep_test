@@ -1,0 +1,13 @@
+id: sql-injection-py
+name: SQL Injection in Python Code
+description: Checks for SQL injection vulnerabilities in Python code.
+severity: high
+language: python
+tags:
+  - security
+  - sql-injection
+patterns:
+  - pattern: |
+      db.execute("SELECT * FROM users WHERE username = '" + username + "' AND password = '" + password + "'")
+    message: |
+      SQL injection vulnerability found in line {line}: {code}
